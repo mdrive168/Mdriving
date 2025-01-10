@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/main.css">
+    <title>M代駕 - 酒後代駕專家</title>
+    <style>
+
+    </style>
+</head>
+<meta name="google-site-verification" content="vF3TZsIR5cqBv5cn15l6S2l3wVFSDIVs80GrcC5K3pM" />
+
+<body>
+    <header>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="carousel-item" style="font-size: 14px;">
+                    <h1>M代駕</h1>
+                    <p class="text1">你飲得醉，我送得穩。</p>
+                </div>
+                <div class="carousel-item" style="font-size: 15px;">
+                    <h1>M代駕分區收費表</h1>
+                    <p class="text1">澳門區----$99&nbsp;&nbsp;&nbsp;&nbsp;路氹區 ---$168<br>氹仔區
+                        ---$128&nbsp;&nbsp;&nbsp;&nbsp;路環區 ---$188
+                    </p>
+                </div>
+
+                <!-- 添加更多項目作為需要 -->
+            </div>
+            <button class="carousel-button prev" onclick="prevSlide()">
+                < </button>
+                    <button class="carousel-button next" onclick="nextSlide()">></button>
+        </div>
+    </header>
+    <!--右框 -->
+    <div class="contact-box">
+        <a href="index.html" id="link1"><img src="wh.jpg"></a>
+        <a href="index.html" id="link2"><img src="wechat.png"></a>
+        <a href="https://www.facebook.com/share/1CxGRJMdk5/?mibextid=LQQJ4d"><img src="fb.jpg"></a>
+        <a href="https://www.instagram.com/mdrive_666?igsh=MXJiazZsZ2R1ZG8yaw=="><img src="ig.jpg"></a>
+        <a href="https://t.me/+MopHNDab7-ZmZDE9"><img src="tg.png"></a>
+        
+    </div>
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content-wrapper">
+            <img class="modal-content" id="modalImage" src="your-image-url.jpg">
+        </div>
+    </div>
+
+    <nav>
+        <a href="">公司介紹</a>
+        <a href="#services">服務介紹</a>
+        <a href="#about">關於我們</a>
+        <a href="#contact">聯絡我們</a>
+    </nav>
+    <section id="company">
+        <h2>公司介紹</h2>
+        <p>「M代駕」宗旨要為澳門市民提供高質量和高性價比的代駕服務。公司深知，澳門人不叫代駕是因為價格昂貴，支持「M代駕」將為澳門人提供一個專屬代駕的平台。</p>
+    </section>
+    <section id="services">
+        <h2>服務介紹</h2>
+        <p>「M代駕」專為澳門酒後代駕服務而設，提供專業可靠的高質量代駕服務。我們的司機經過嚴格培訓，遵守道路法則，確保安全送你回家！ </p>
+        <ul>
+            <li>酒後代駕</li>
+            <li>短途代駕</li>
+            <li>商務代駕</li>
+            <li>私人司機</li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>關於我們</h2>
+        <p>「M代駕」是一個以客戶安全為核心的服務公司，擁有多年的經驗和專業團隊。保險法律等問題無需擔心！服務費用透明，隨時隨地輕鬆預約！</p>
+    </section>
+
+    <section id="contact">
+        <h2>聯絡我們</h2>
+        <p>如需服務，請聯絡我們：</p>
+        <p>電話：<strong>68017763</strong></p>
+        <p>Email：<strong> mmdrive168@gmail.com</strong></p>
+    </section>
+
+    <footer>
+        <a href="tel:+85368017763" style="color:black;">
+            <p style="font-size: 22px;">&copy; 呼叫M代駕</p>
+        </a>
+    </footer>
+    <br><br><br>
+
+</body>
+<script src="./static/script.js"></script>
+<script>
+    var modals = document.querySelectorAll(".modal");
+
+    // 获取所有打开模态框的链接
+    var links = document.querySelectorAll(".open-modal");
+
+    // 为每个链接添加点击事件监听器
+    links.forEach(function (link) {
+        link.onclick = function (event) {
+            event.preventDefault(); // 阻止链接的默认行为
+
+            // 关闭所有模态框
+            modals.forEach(function (modal) {
+                modal.style.display = "none";
+            });
+
+            // 获取要显示的模态框和图片的标识符
+            var modalId = this.getAttribute("data-modal-id");
+            var imageSrc = this.getAttribute("data-image-src");
+
+            // 显示对应的模态框并设置图片源
+            var modalToShow = document.getElementById(modalId);
+            modalToShow.style.display = "flex";
+            modalToShow.querySelector(".modal-image").src = imageSrc;
+        };
+    });
+
+    // 获取所有关闭按钮
+    var closeButtons = document.querySelectorAll(".close");
+    closeButtons.forEach(function (button) {
+        button.onclick = function () {
+            var modal = this.closest(".modal");
+            modal.style.display = "none";
+        };
+    });
+
+    // 点击模态框外部时关闭模态框（可选）
+    window.onclick = function (event) {
+        modals.forEach(function (modal) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    };
+</script>
+
+</html>
